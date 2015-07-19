@@ -7,7 +7,7 @@ dimas_promise.then(function([returnValue] { ... });
 ```
 
 
-## Example 1 - Execute function on another process
+#### Example 1 - Execute function on another process
 
 ```
 var dimas = require('dimas-parallel);
@@ -19,7 +19,7 @@ dimas.execute(function() {
 
 
 
-## Example 2 - Execute function with arguments and get result
+#### Example 2 - Execute function with arguments and get result
 
 ```
 function Sum (value1, value2) {
