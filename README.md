@@ -17,8 +17,6 @@ dimas.execute(function() {
 });
 ```
 
-
-
 #### Example 2 - Execute function with arguments and get result
 
 ```
