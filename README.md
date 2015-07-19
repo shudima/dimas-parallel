@@ -1,4 +1,5 @@
-﻿# dimas-parallel
+
+# dimas-parallel
 Executes JS function in parallel on another process (returns promise)
 ```
 var dimas = require('dimas-parallel);
