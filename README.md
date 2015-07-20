@@ -1,19 +1,23 @@
 
-# dimas-parallel
+# dmas-parallel
 Executes JS function in parallel on another process (returns promise)
 ```
-var dimas = require('dimas-parallel');
-var dimas_promise = dimas.execute(functionToEvaluate, [arguments])
-dimas_promise.then(function([returnValue]) { ... });
+var parallel = require('dimas-parallel');
+var parallel_promise = parallel.execute(functionToEvaluate, [arguments]);
+parallel_promise.then(function([returnValue]) { ... });
 ```
 
+You can set maximum number of concurrent processes by. The default is number of CPUs minus one.
+```
+parallel.setMaxNumberOfProcesses([Some_Value]);
+```
 
 #### Example 1 - Execute function on another process
 
 ```
-var dimas = require('dimas-parallel');
+var parallel = require('parallel-parallel');
 
-dimas.execute(function() {
+parallel.execute(function() {
   // do some stuff on another process
 });
 ```
@@ -25,9 +29,9 @@ function Sum (value1, value2) {
   return value1 + value2;
 }
 
-var dimas = require('dimas-parallel');
+var parallel = require('parallel-parallel');
 
-dimas.execute(Sum, [1, 2]).then(function (result) {
+parallel.execute(Sum, [1, 2]).then(function (result) {
     console.log(result);
 });
 ```
