@@ -1,0 +1,30 @@
+{
+  "name": "dimas-parallel",
+  "version": "1.0.1",
+  "description": "Executes JS function in parallel on another process",
+  "main": "dimas-parallel.js",
+  "author": "dshulga",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "promise": "^7.0.3"
+  },
+  "devDependencies": {},
+ 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shudima/dimas-parallel"
+  },
+  "keywords": [
+    "nodejs",
+    "multithread",
+    "thread",
+    "child_process",
+    "parallel",
+    "promise"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shudima/dimas-parallel/issues"
+  },
+  "homepage": "https://github.com/shudima/dimas-parallel"
+}

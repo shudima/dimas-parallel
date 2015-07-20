@@ -2,16 +2,16 @@
 # dimas-parallel
 Executes JS function in parallel on another process (returns promise)
 ```
-var dimas = require('dimas-parallel);
-var dimas_promise = dimas.execute(functionToEvaluate, [arguments)
-dimas_promise.then(function([returnValue] { ... });
+var dimas = require('dimas-parallel');
+var dimas_promise = dimas.execute(functionToEvaluate, [arguments])
+dimas_promise.then(function([returnValue]) { ... });
 ```
 
 
 #### Example 1 - Execute function on another process
 
 ```
-var dimas = require('dimas-parallel);
+var dimas = require('dimas-parallel');
 
 dimas.execute(function() {
   // do some stuff on another process
