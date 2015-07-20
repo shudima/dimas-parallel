@@ -4,13 +4,18 @@ var os = require('os');
 
 module.exports = {
     execute : execute,
-    maxNumberOfProcesses : maxNumberOfProcesses
+    setMaxNumberOfProcesses : setMaxNumberOfProcesses
 }
 
 var maxNumberOfProcesses = os.cpus().length - 1;
 
 var numberOfRunningProcesses = 0;
 var requestsQueue = [];
+
+
+function setMaxNumberOfProcesses(numOfProcesses) {
+    maxNumberOfProcesses = numOfProcesses;
+}
 
 function execute(func, args) {
     return new Promise(function(resolve, reject) {
@@ -50,7 +55,6 @@ function executeRequest(request) {
         var outputCommand = newConsoleCommand + '(' + func.name + '(' + arguments + '));';
         var command = 'node -e "' + replaceConsoleCommand + ' ' + funcCommand + ' ' + outputCommand;
         
-        console.log('executing' + args);
         numberOfRunningProcesses++;
         child.exec(command, function (error, stdout, stderr) {
             
@@ -59,7 +63,11 @@ function executeRequest(request) {
             if (error) {
                 reject(error);
             } else {
-                resolve(JSON.parse(stdout.replace(/(\r\n|\n|\r)/gm, "")));
+                try {
+                    resolve(JSON.parse(stdout.replace(/(\r\n|\n|\r)/gm, "")));
+                } catch (e) {
+                    resolve(stdout.replace(/(\r\n|\n|\r)/gm, ""));
+                } 
             }
         });
     });
@@ -73,7 +81,13 @@ function getArguments(args) {
     var result = [];
 
     args.forEach(function (arg) {
-        var str = JSON.stringify(arg);
+        var str = "'" + arg + "'";
+
+        console.log();
+        if (typeof (arg) != 'string') {
+
+            str = JSON.stringify(arg);
+        } 
         result.push(str);
     });
 
