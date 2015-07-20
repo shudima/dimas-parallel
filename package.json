@@ -1,6 +1,6 @@
 {
   "name": "dimas-parallel",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Executes JS function in parallel on another process",
   "main": "dimas-parallel.js",
   "author": "dshulga",

@@ -7,7 +7,7 @@ var parallel_promise = parallel.execute(functionToEvaluate, [arguments]);
 parallel_promise.then(function([returnValue]) { ... });
 ```
 
-You can set maximum number of concurrent processes by. The default is number of CPUs minus one.
+You can set the maximum number of concurrent processes by (The default is number of CPUs minus one):
 ```
 parallel.setMaxNumberOfProcesses([Some_Value]);
 ```
