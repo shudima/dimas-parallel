@@ -1,11 +1,10 @@
 {
   "name": "dimas-parallel",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Executes JS function in parallel on another process",
   "main": "dimas-parallel.js",
-  "author": "dshulga",
+  "author": "Dima Shulga",
   "dependencies": {
-    "debug": "^2.2.0",
     "promise": "^7.0.3"
   },
   "devDependencies": {},
@@ -20,7 +19,8 @@
     "thread",
     "child_process",
     "parallel",
-    "promise"
+    "promise",
+    "process"
   ],
   "license": "ISC",
   "bugs": {
