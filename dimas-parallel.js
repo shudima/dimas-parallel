@@ -53,7 +53,8 @@ function executeRequest(request) {
         var replaceConsoleCommand = 'var ' + newConsoleCommand + ' = console.log; console.log = function () {};';
         var funcCommand = func.toString().replace(/(\r\n|\n|\r)/gm, "");
         var outputCommand = newConsoleCommand + '(' + func.name + '(' + arguments + '));';
-        var command = 'node -e "' + replaceConsoleCommand + ' ' + funcCommand + ' ' + outputCommand.replace(/"/g, '\\\"');
+        outputCommand = outputCommand.replace(/"/g, '\\\"');
+        var command = 'node -e "' + replaceConsoleCommand + ' ' + funcCommand + ' ' + outputCommand;
         
         numberOfRunningProcesses++;
         child.exec(command, function (error, stdout, stderr) {
