@@ -1,5 +1,5 @@
 
-# dmas-parallel
+# dimas-parallel
 Executes JS function in parallel on another process (returns promise)
 ```
 var parallel = require('dimas-parallel');
@@ -15,7 +15,7 @@ parallel.setMaxNumberOfProcesses([Some_Value]);
 #### Example 1 - Execute function on another process
 
 ```
-var parallel = require('parallel-parallel');
+var parallel = require('dimas-parallel');
 
 parallel.execute(function() {
   // do some stuff on another process
@@ -29,7 +29,7 @@ function Sum (value1, value2) {
   return value1 + value2;
 }
 
-var parallel = require('parallel-parallel');
+var parallel = require('dimas-parallel');
 
 parallel.execute(Sum, [1, 2]).then(function (result) {
     console.log(result);
