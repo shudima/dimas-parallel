@@ -54,7 +54,7 @@ function executeRequest(request) {
         var funcCommand = func.toString().replace(/(\r\n|\n|\r)/gm, "");
         var outputCommand = newConsoleCommand + '(' + func.name + '(' + arguments + '));';
         outputCommand = outputCommand.replace(/"/g, '\\\"');
-        var command = 'node -e "' + replaceConsoleCommand + ' ' + funcCommand + ' ' + outputCommand;
+        var command = 'node -e "' + replaceConsoleCommand + ' ' + funcCommand + ' ' + outputCommand + '"';
         
         numberOfRunningProcesses++;
         child.exec(command, function (error, stdout, stderr) {
